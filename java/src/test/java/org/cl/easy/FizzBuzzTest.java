@@ -17,41 +17,44 @@ class FizzBuzzTest {
     }
 
     @Test
-    void testFizzBuzzGeneratorForInput3() {
-        int input = 3;
+    void testFizzBuzzGenerator_withInput3() {
         List<String> expected = List.of("1", "2", "Fizz");
-        assertEquals(expected, fizzBuzz.fizzBuzzGenerator(input));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution1(3));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution2(3));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution3(3));
     }
 
     @Test
-    void testFizzBuzzGeneratorForInput5() {
-        int input = 5;
+    void testFizzBuzzGenerator_withInput5() {
         List<String> expected = List.of("1", "2", "Fizz", "4", "Buzz");
-        assertEquals(expected, fizzBuzz.fizzBuzzGenerator(input));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution1(5));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution2(5));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution3(5));
     }
 
     @Test
-    void testFizzBuzzGeneratorForInput15() {
-        int input = 15;
+    void testFizzBuzzGenerator_withInput15() {
         List<String> expected = List.of("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
                 "Buzz", "11", "Fizz", "13", "14", "FizzBuzz");
-        assertEquals(expected, fizzBuzz.fizzBuzzGenerator(input));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution1(15));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution2(15));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution3(15));
     }
 
     @Test
-    void testFizzBuzzGeneratorForInput1() {
-        int input = 1;
+    void testFizzBuzzGenerator_withMinInput() {
         List<String> expected = List.of("1");
-        assertEquals(expected, fizzBuzz.fizzBuzzGenerator(input));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution1(1));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution2(1));
+        assertEquals(expected, fizzBuzz.fizzBuzzGenerator_solution3(1));
     }
 
     @Test
-    void testFizzBuzzGenerator_stressTestForInput10000() {
-        int input = 10_000;
-        List<String> result = fizzBuzz.fizzBuzzGenerator(input);
+    void testFizzBuzzGenerator_stressTest_withMaxInput() {
+        List<String> result = fizzBuzz.fizzBuzzGenerator_solution1(10_000); // n=10^4
 
         // Check the size
-        assertEquals(input, result.size());
+        assertEquals(10_000, result.size());
 
         // Optional spot checks
         assertEquals("1", result.get(0));           // 1st element
