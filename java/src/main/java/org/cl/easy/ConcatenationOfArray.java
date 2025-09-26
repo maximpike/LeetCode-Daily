@@ -5,11 +5,11 @@ public class ConcatenationOfArray {
     // ---------------------- SOLUTION 1 -----------------------------//
     public int[] getConcatenation_solution1(int[] nums) {
 
-        int[] ans = new int[nums.length*2];
+        int[] ans = new int[nums.length * 2];
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             ans[i] = nums[i];
-            ans[i+n] = nums[i];
+            ans[i + n] = nums[i];
         }
         return ans;
     }
@@ -19,8 +19,8 @@ public class ConcatenationOfArray {
     // ---------------------- SOLUTION 2 -----------------------------//
     public int[] getConcatenation_solution2(int[] nums) {
         int n = nums.length;
-        int[] ans = new int[n*2];
-        System.arraycopy(nums,0, ans,0,n);
+        int[] ans = new int[n * 2];
+        System.arraycopy(nums, 0, ans, 0, n);
         System.arraycopy(nums, 0, ans, n, n);
         return ans;
     }

@@ -51,5 +51,4 @@ class ConcatenationOfArrayTest {
     }
 
     // TODO: create stress test
-
 }
