@@ -55,11 +55,10 @@ class CountEqualAndDivInArrayTest {
         assertEquals(45,countEqualAndDivInArray.countPairs(inputArray,1));
     }
 
-//    TODO: create stress test with Max Array length
+    //TODO: create stress test with Max Array length
     @Test
     void testCountPairs_withMaxNumsArray() {
         // Will need to create input array with 100 elements
-//        int[] inputArray = {};
-
+        // int[] inputArray = {};
     }
 }
