@@ -20,8 +20,11 @@ class GroupAnagramsTest {
         );
 
         GroupAnagrams ga = new GroupAnagrams();
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+
+//        GroupAnagramsReview gar = new GroupAnagramsReview();
+//        assertAnagramGroupsEqual(expected, gar.groupAnagrams(input));
     }
 
     @Test
@@ -30,8 +33,11 @@ class GroupAnagramsTest {
         List<List<String>> expected = List.of(List.of("", ""));
 
         GroupAnagrams ga = new GroupAnagrams();
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+//
+//        GroupAnagramsReview gar = new GroupAnagramsReview();
+//        assertAnagramGroupsEqual(expected, gar.groupAnagrams(input));
     }
 
     @Test
@@ -39,8 +45,11 @@ class GroupAnagramsTest {
         String[] input = {"a"};
         List<List<String>> expected = List.of(List.of("a"));
         GroupAnagrams ga = new GroupAnagrams();
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+
+//        GroupAnagramsReview gar = new GroupAnagramsReview();
+//        assertAnagramGroupsEqual(expected, gar.groupAnagrams(input));
     }
 
     @Test
@@ -51,11 +60,14 @@ class GroupAnagramsTest {
                 List.of("anagram", "nagaram")
         );
         GroupAnagrams ga = new GroupAnagrams();
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
-        asserAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution1(input));
+        assertAnagramGroupsEqual(expected, ga.groupAnagrams_solution2(input));
+
+//        GroupAnagramsReview gar = new GroupAnagramsReview();
+//        assertAnagramGroupsEqual(expected, gar.groupAnagrams(input));
     }
 
-    private void asserAnagramGroupsEqual(List<List<String>> expected, List<List<String>> actual) {
+    private void assertAnagramGroupsEqual(List<List<String>> expected, List<List<String>> actual) {
         assertEquals(expected.size(), actual.size(), "Number of groups should match");
 
         // Convert bot lists to sets of order-independent comparison
