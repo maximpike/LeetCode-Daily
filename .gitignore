@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 
 # === IntelliJ IDEA ===
-.idea/
+*.idea/
 *.iws
 *.iml
 *.ipr
@@ -40,3 +40,7 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Review module - dupicate code
+java/src/main/java/org/cl/review
+java/src/test/java/org/cl/review
