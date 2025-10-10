@@ -1,6 +1,7 @@
 package org.cl.easy;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class RansomNote {
 
@@ -25,10 +26,32 @@ public class RansomNote {
         return true;
     }
     // Time Complexity: O(m+r) = O(n)
-    // Space Complexity: O(n)
+    // Space Complexity: O(k) - k is number of unique characters in the magazine
 
-    // ---------------------- SOLUTION 2 - verify solution -----------------------------//
+    // ---------------------- SOLUTION 2 - syntax improved  -----------------------------//
     public boolean canConstruct_solution2(String ransomNote, String magazine) {
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (char c : magazine.toCharArray()) {
+            map.put(c, map.getOrDefault(c,0) + 1);
+        }
+
+        for (char c : ransomNote.toCharArray()) {
+            if (!map.containsKey(c)) {
+                return false;
+            }
+            map.put(c, map.get(c) - 1);
+            if (map.get(c) == 0) {
+                map.remove(c);
+            }
+        }
+        return true;
+    }
+    // Time complexity: O(n)
+    // Space complexity: O(k) - k is number of unique characters in the magazine
+
+    // ---------------------- SOLUTION 3 - verify solution -----------------------------//
+    public boolean canConstruct_solution3(String ransomNote, String magazine) {
 
         for (int i = 0; i < ransomNote.length(); i++) {
 
