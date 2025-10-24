@@ -1,6 +1,5 @@
 package org.cl.easy;
 
-import org.cl.review.easy.ValidPalindromeReview;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,9 +11,6 @@ class ValidPalindromeTest {
         ValidPalindrome vp = new ValidPalindrome();
         assertTrue(vp.isPalindrome_solution1("A man, a plan, a canal: Panama"));
         assertTrue(vp.isPalindrome_solution2("A man, a plan, a canal: Panama"));
-
-        ValidPalindromeReview vpr = new ValidPalindromeReview();
-        assertTrue(vpr.isPalindrome("A man, a plan, a canal: Panama"));
     }
 
     @Test
@@ -22,9 +18,6 @@ class ValidPalindromeTest {
         ValidPalindrome vp = new ValidPalindrome();
         assertFalse(vp.isPalindrome_solution1("race a car"));
         assertFalse(vp.isPalindrome_solution2("race a car"));
-
-        ValidPalindromeReview vpr = new ValidPalindromeReview();
-        assertFalse(vpr.isPalindrome("race a car"));
     }
 
     @Test
@@ -32,9 +25,6 @@ class ValidPalindromeTest {
         ValidPalindrome vp = new ValidPalindrome();
         assertTrue(vp.isPalindrome_solution1(" "));
         assertTrue(vp.isPalindrome_solution2(" "));
-
-        ValidPalindromeReview vpr = new ValidPalindromeReview();
-        assertTrue(vpr.isPalindrome(" "));
     }
 
     @Test
@@ -42,8 +32,26 @@ class ValidPalindromeTest {
         ValidPalindrome vp = new ValidPalindrome();
         assertTrue(vp.isPalindrome_solution1("racecar"));
         assertTrue(vp.isPalindrome_solution2("racecar"));
+    }
 
-        ValidPalindromeReview vpr = new ValidPalindromeReview();
-        assertTrue(vpr.isPalindrome("racecar"));
+    @Test
+    void isPalindrome_example5() {
+        ValidPalindrome vp = new ValidPalindrome();
+        assertTrue(vp.isPalindrome_solution1("12345678900987654321"));
+        assertTrue(vp.isPalindrome_solution2("12345678900987654321"));
+    }
+
+    @Test
+    void isPalindrome_example6() {
+        ValidPalindrome vp = new ValidPalindrome();
+        assertTrue(vp.isPalindrome_solution1("1234567890987654321"));
+        assertTrue(vp.isPalindrome_solution2("1234567890987654321"));
+    }
+
+    @Test
+    void isPalindrome_example7() {
+        ValidPalindrome vp = new ValidPalindrome();
+        assertFalse(vp.isPalindrome_solution1("123421"));
+        assertFalse(vp.isPalindrome_solution2("123421"));
     }
 }
