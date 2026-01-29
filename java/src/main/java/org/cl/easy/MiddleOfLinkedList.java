@@ -1,5 +1,4 @@
 package org.cl.easy;
-
 import java.util.ArrayList;
 
 /**
@@ -14,10 +13,29 @@ import java.util.ArrayList;
  */
 public class MiddleOfLinkedList {
 
+    // ---------------------- SOLUTION 1 -----------------------------//
     public ListNode middleNode_solution1(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    // Time Complexity = O(n/2) = O(n)
+    // Space Complexity = O(1)
+
+    // ---------------------- SOLUTION 2 -----------------------------//
+    public ListNode middleNode_solution2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
 
         ArrayList<ListNode> array = new ArrayList<>();
         int length = 0;
+
         while (head != null) {
             array.add(head);
             head = head.next;
@@ -28,18 +46,6 @@ public class MiddleOfLinkedList {
     // Time complexity = O(n)
     // Space complexity = O(n)
 
-    public ListNode middleNode_solution2(ListNode head) {
-        ListNode middle = head;
-        ListNode end = head;
-
-        while (end != null && end.next != null) { // 3 1 2 7 7
-            middle = middle.next;
-            end = end.next.next;
-        }
-        return middle;
-    }
-    // Time Complexity = O(n)
-    // Space Complexity = O(1)
 }
 
 

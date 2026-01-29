@@ -7,7 +7,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class MiddleOfLinkedListTest {
 
     @Test
-    void middleNode_singleNod() {
+    void middleNode_emptyList() {
+        ListNode head = null;
+        MiddleOfLinkedList ml = new MiddleOfLinkedList();
+        assertSame(null, ml.middleNode_solution1(head));
+        assertSame(null, ml.middleNode_solution2(head));
+    }
+
+    @Test
+    void middleNode_singleNode() {
         ListNode head = new ListNode(1);
         MiddleOfLinkedList ml = new MiddleOfLinkedList();
         assertSame(head, ml.middleNode_solution1(head));
